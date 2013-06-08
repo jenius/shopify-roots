@@ -1,3 +1,5 @@
+jade = require 'jade' 
+
 exports.settings =
   file_type: 'sade'
   target: 'liquid'
