@@ -1,4 +1,4 @@
-jade = require 'jade' 
+jade = module.require 'jade'
 
 exports.settings =
   file_type: 'sade'
@@ -9,10 +9,10 @@ exports.compile = (file, callback) ->
   compiled_contents = null
 
   try
-    compiled_contents = jade.compile(file.contents,
-      pretty: not global.options.compress
+    compiled_contents = jade.compile file.contents, {
+      pretty: !global.options.compress
       filename: file.path
-    )
+    }
   catch err
     error = err
 
